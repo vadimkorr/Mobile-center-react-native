@@ -32,40 +32,20 @@ class HomeScreen extends React.Component {
           10000
         </Text>
 
-        <View style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          alignItems: 'center',
-        }}>
-          <View style={{
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-          }}>
+        <View style={styles.home_description}>
+          <View style={styles.home_description_cell}>
             <View><Image source={require('./images/cal.png')}/></View>
             <View><Text>CALORIES</Text></View>
             <View><Text>500</Text></View>
           </View>
           <Text>|</Text>
-          <View style={{
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-          }}>
+          <View style={styles.home_description_cell}>
             <View><Image source={require('./images/distance.png')}/></View>
             <View><Text>DISTANCE</Text></View>
             <View><Text>7.4 Km</Text></View>
           </View>
           <Text>|</Text>
-          <View style={{
-            flex: 1,
-            flexDirection: 'column',
-            justifyContent: 'space-around',
-            alignItems: 'center',
-          }}>
+          <View style={styles.home_description_cell}>
             <View><Image source={require('./images/time.png')}/></View>
             <View><Text>ACTIVE TIME</Text></View>
             <View><Text>1h34m</Text></View>
@@ -124,7 +104,6 @@ class LoginScreen extends React.Component {
   }
 }
 
-
 class Login2Screen extends React.Component {
   static navigationOptions = {
     title: 'Login2 ',
@@ -146,6 +125,8 @@ class StepsScreen extends React.Component {
   render() {
     return (
      <View style={styles.container}>
+        <Text>DAILY STATISTICS</Text>
+        <Image  width="300" height="300" source={require('./images/graph.png')}/>
         <Text>Steps</Text>
       </View>
     );
@@ -159,6 +140,8 @@ class CalScreen extends React.Component {
   render() {
     return (
      <View style={styles.container}>
+        <Text>DAILY STATISTICS</Text>
+        <Image  width="300" height="300" source={require('./images/graph.png')}/>
         <Text>Calories</Text>
       </View>
     );
@@ -172,6 +155,8 @@ class DistanceScreen extends React.Component {
   render() {
     return (
      <View style={styles.container}>
+        <Text>DAILY STATISTICS</Text>
+        <Image  width="300" height="300" source={require('./images/graph.png')}/>
         <Text>Distance</Text>
       </View>
     );
@@ -185,12 +170,13 @@ class TimeScreen extends React.Component {
   render() {
     return (
      <View style={styles.container}>
+        <Text>DAILY STATISTICS</Text>
+        <Image  width="300" height="300" source={require('./images/graph.png')}/>
         <Text>Time</Text>
       </View>
     );
   }
 }
-
 
 const StatisticRouter = TabNavigator({
     Steps: { screen:  StepsScreen },
@@ -241,7 +227,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
- 
+  home_description: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  home_description_cell: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  }
 });
 
 AppRegistry.registerComponent('MobileCenter', () => MobileCenterRouter);
